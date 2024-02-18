@@ -11,7 +11,7 @@ Once the VM is up and running, you launch it with the included binary and it
 starts a simple text adventure, in the style of Zork. 
 
 I had a lot of fun working through the challenge with a C VM
-[implementation](https://github/njm64/synacor), but I was curious to see 
+[implementation](https://github.com/njm64/synacor), but I was curious to see 
 if it would be feasible to get it running on the Commodore 64. The VM
 specifications are fairly modest, so it felt like it should be possible.
 
