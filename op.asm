@@ -304,33 +304,33 @@ op_mod: {
     sta C
     stx C+1
     lda #0	                // Preset remainder to 0
-	sta A
-	sta A+1
-	ldx #16	                // Repeat for each bit
+    sta A
+    sta A+1
+    ldx #16	                // Repeat for each bit
 div_loop:   
     asl B                   // Dividend lb & hb*2, msb -> Carry
-	rol B+1	
-	rol A	                // Remainder lb & hb * 2 + msb from carry
-	rol A+1
-	lda A
-	sec
-	sbc C	                // Subtract divisor to see if it fits in
-	tay	                    // lb result -> Y, for we may need it later
-	lda A+1
-	sbc C+1
-	bcc skip                // If carry=0 then divisor didn't fit in yet
-	sta A+1	                // Else save substraction result as new remainder
-	sty A	
+    rol B+1	
+    rol A	                // Remainder lb & hb * 2 + msb from carry
+    rol A+1
+    lda A
+    sec
+    sbc C	                // Subtract divisor to see if it fits in
+    tay	                    // lb result -> Y, for we may need it later
+    lda A+1
+    sbc C+1
+    bcc skip                // If carry=0 then divisor didn't fit in yet
+    sta A+1	                // Else save substraction result as new remainder
+    sty A	
 skip:        
-	dex
-	bne div_loop	
+    dex
+    bne div_loop	
     pla
     tay
     lda A
     sta reg_base,y          // Store the remainder low byte
     lda A+1
     sta reg_base+1,y        // Store the remainder high byte
-	jmp next
+    jmp next
 }
 
 //----------------------------------------------------------------------------
