@@ -197,7 +197,6 @@ find_physical_page: {
     bcc !+
     lda #page_min           // If not, set it back to the minimum page
     sta page_index
-    inc $d020
 !:  tay
     lda page_state_map,y    // Is it modified?  
     cmp #ps_modified
