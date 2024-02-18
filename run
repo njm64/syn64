@@ -1,0 +1,2 @@
+#!/bin/sh
+x64sc -moncommands build/vm.vs -autostartprgmode 1 build/synacor.d64
