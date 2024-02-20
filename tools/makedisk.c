@@ -84,7 +84,7 @@ static void writeBAM() {
   
   uint8_t* p = bam + 4;
   for(int t = TRACK_MIN; t <= TRACK_MAX; t++, p += 4) {
-    if(isTrackUsed(t)) {
+    if(!isTrackUsed(t)) {
       p[0] = sectorsForTrack(t); // Free sectors for this track
       p[1] = 0xff;  // Availability bitmask
       p[2] = 0xff;  // Availability bitmask
