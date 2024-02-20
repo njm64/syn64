@@ -206,7 +206,7 @@ find_physical_page: {
 }
 
 //----------------------------------------------------------------------------
-// Map a physical page to a logical page
+// Map a logical page to a physical page
 // Input:    Logical page number in A
 // Output:   Physical page number in A  
 // Modifies: X, Y 
